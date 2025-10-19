@@ -17,6 +17,10 @@ os.path.dirname(os.path.abspath(__file__))
 setup(
     name="diff_gaussian_rasterization",
     packages=["diff_gaussian_rasterization"],
+    install_requires=[
+        "torch",
+        "dacite",
+    ],
     ext_modules=[
         CUDAExtension(
             name="diff_gaussian_rasterization._C",
