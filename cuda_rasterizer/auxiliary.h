@@ -223,7 +223,7 @@ __forceinline__ __device__ bool in_frustum(int idx,
 	glm::vec4 p_world(mean3D, 1.0f);
 	p_view = viewmatrix * p_world;
 
-	if (p_view.z <= 0.2f)// || ((p_proj.x < -1.3 || p_proj.x > 1.3 || p_proj.y < -1.3 || p_proj.y > 1.3)))
+	if (p_view.z <= 0.001f)// || ((p_proj.x < -1.3 || p_proj.x > 1.3 || p_proj.y < -1.3 || p_proj.y > 1.3)))
 	{
 		if (prefiltered)
 		{
