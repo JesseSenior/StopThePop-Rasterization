@@ -18,6 +18,8 @@ import torch
 from enum import IntEnum
 from . import _C
 
+NUM_CHANNELS = _C.num_channels
+
 def enum_dict_factory(data):
     def convert_value(obj):
         if isinstance(obj, IntEnum):

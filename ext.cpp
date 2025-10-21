@@ -11,8 +11,10 @@
 
 #include <torch/extension.h>
 #include "rasterize_points.h"
+#include "cuda_rasterizer/config.h"
 
 PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
+  m.attr("num_channels") = NUM_CHANNELS;
   m.def("rasterize_gaussians", &RasterizeGaussiansCUDA);
   m.def("rasterize_gaussians_backward", &RasterizeGaussiansBackwardCUDA);
   m.def("mark_visible", &markVisible);
